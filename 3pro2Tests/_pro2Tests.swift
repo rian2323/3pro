@@ -5,9 +5,9 @@
 //  Created by 波多野　瑛子 on 2016/06/22.
 //  Copyright © 2016年 波多野　瑛子. All rights reserved.
 //
-
+import UIKit
 import XCTest
-@testable import _pro2
+
 
 class _pro2Tests: XCTestCase {
     
@@ -24,6 +24,7 @@ class _pro2Tests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        XCTAssert(true, "Pass")
     }
     
     func testPerformanceExample() {
