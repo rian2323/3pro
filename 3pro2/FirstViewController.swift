@@ -8,15 +8,20 @@
 
 import UIKit
 import MediaPlayer
+import AVFoundation
 
 class FirstViewController: UIViewController, MPMediaPickerControllerDelegate {
 
-    var player = MPMusicPlayerController()
+    var audioPlayer:AVAudioPlayer?
+    
+    @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var rate: UISlider!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        player = MPMusicPlayerController.applicationMusicPlayer()
+         messageLabel.text = ""
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,32 +38,74 @@ class FirstViewController: UIViewController, MPMediaPickerControllerDelegate {
     
     func mediaPicker(mediaPicker: MPMediaPickerController, didPickMediaItems mediaItemCollection: MPMediaItemCollection) {
         
-        // 選択した曲情報がmediaItemCollectionに入っているので、これをplayerにセット。
-        player.setQueueWithItemCollection(mediaItemCollection)
-        // 再生開始
-        player.play()
-        // ピッカーを閉じ、破棄する
-        dismissViewControllerAnimated(true, completion: nil)
+        defer {
+            dismissViewControllerAnimated(true, completion: nil)
+        }
+        
+        let items = mediaItemCollection.items
+        if items.isEmpty {
+                return
+        }
+        let item = items[0]
+        if let url = item.assetURL {
+            do {
+                audioPlayer = try AVAudioPlayer(contentsOfURL: url)
+            } catch  {
+                messageLabel.text = "再生できないよ"
+                audioPlayer = nil
+                return
+                
+            }
+            if let player = audioPlayer {
+                
+                player.enableRate = true
+                player.rate = rate.value
+                player.play()
+                let title = item.title ?? ""
+                messageLabel.text = title
+                
+            }
+        } else {
+            messageLabel.text = "再生できないよ"
+            
+            audioPlayer = nil
+        }
         
     }
     
-    //選択がキャンセルされた場合に呼ばれる
+   
     func mediaPickerDidCancel(mediaPicker: MPMediaPickerController) {
-        // ピッカーを閉じ、破棄する
+        
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    
+    @IBAction func rate(sender: AnyObject) {
+        let slider = sender as! UISlider
+        
+        if let player = audioPlayer {
+            player.rate = slider.value
+        }
+
+    }
+    
     @IBAction func pushplay(sender: AnyObject) {
+        if let player = audioPlayer {
         player.play()
+        }
     }
     
     
     @IBAction func pushpause(sender: AnyObject) {
+        if let player = audioPlayer {
         player.pause()
+        }
     }
     
     @IBAction func pushstop(sender: AnyObject) {
+        if let player = audioPlayer {
         player.stop()
+        }
     }
     
 }
