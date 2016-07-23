@@ -15,6 +15,7 @@
 		0DC934CE1D1A420900FB0528 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DC934CC1D1A420900FB0528 /* LaunchScreen.storyboard */; };
 		0DC934D91D1A420900FB0528 /* _pro2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC934D81D1A420900FB0528 /* _pro2Tests.swift */; };
 		0DC934E41D1A420900FB0528 /* _pro2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC934E31D1A420900FB0528 /* _pro2UITests.swift */; };
+		32BE5F671D42BB1500F2D420 /* 3pro.png in Resources */ = {isa = PBXBuildFile; fileRef = 32BE5F661D42BB1500F2D420 /* 3pro.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		0DC934DF1D1A420900FB0528 /* 3pro2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 3pro2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DC934E31D1A420900FB0528 /* _pro2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _pro2UITests.swift; sourceTree = "<group>"; };
 		0DC934E51D1A420900FB0528 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32BE5F661D42BB1500F2D420 /* 3pro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3pro.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +81,8 @@
 		0DC934B51D1A420900FB0528 = {
 			isa = PBXGroup;
 			children = (
-				0DC934C01D1A420900FB0528 /* 3pro2 */,
+				32BE5F661D42BB1500F2D420 /* 3pro.png */,
+				0DC934C01D1A420900FB0528 /* 3pro2nd */,
 				0DC934D71D1A420900FB0528 /* 3pro2Tests */,
 				0DC934E21D1A420900FB0528 /* 3pro2UITests */,
 				0DC934BF1D1A420900FB0528 /* Products */,
@@ -96,7 +99,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0DC934C01D1A420900FB0528 /* 3pro2 */ = {
+		0DC934C01D1A420900FB0528 /* 3pro2nd */ = {
 			isa = PBXGroup;
 			children = (
 				0DC934C11D1A420900FB0528 /* AppDelegate.swift */,
@@ -107,6 +110,7 @@
 				0DC934CC1D1A420900FB0528 /* LaunchScreen.storyboard */,
 				0DC934CF1D1A420900FB0528 /* Info.plist */,
 			);
+			name = 3pro2nd;
 			path = 3pro2;
 			sourceTree = "<group>";
 		};
@@ -196,7 +200,7 @@
 				TargetAttributes = {
 					0DC934BD1D1A420900FB0528 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 78582VX96M;
+						DevelopmentTeam = 694B2SAK2Z;
 					};
 					0DC934D31D1A420900FB0528 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -208,7 +212,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0DC934B91D1A420900FB0528 /* Build configuration list for PBXProject "3pro2" */;
+			buildConfigurationList = 0DC934B91D1A420900FB0528 /* Build configuration list for PBXProject "3pro2nd" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -236,6 +240,7 @@
 				0DC934CE1D1A420900FB0528 /* LaunchScreen.storyboard in Resources */,
 				0DC934CB1D1A420900FB0528 /* Assets.xcassets in Resources */,
 				0DC934C91D1A420900FB0528 /* Main.storyboard in Resources */,
+				32BE5F671D42BB1500F2D420 /* 3pro.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,8 +412,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = 3pro2/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "piano.-pro2";
+				PRODUCT_BUNDLE_IDENTIFIER = second3pro2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -422,8 +428,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = 3pro2/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "piano.-pro2";
+				PRODUCT_BUNDLE_IDENTIFIER = second3pro2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -479,7 +486,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0DC934B91D1A420900FB0528 /* Build configuration list for PBXProject "3pro2" */ = {
+		0DC934B91D1A420900FB0528 /* Build configuration list for PBXProject "3pro2nd" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0DC934E61D1A420900FB0528 /* Debug */,
