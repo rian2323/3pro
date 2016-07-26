@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--First-->
+        <!--Music-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="_pro2" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,62 +17,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L8x-MI-17R">
-                                <rect key="frame" x="30" y="70" width="46" height="30"/>
-                                <state key="normal" title="選曲"/>
-                                <connections>
-                                    <action selector="pick:" destination="9pv-A4-QxB" eventType="touchDown" id="e6Y-Ls-giw"/>
-                                    <action selector="pick:" destination="9pv-A4-QxB" eventType="touchUpInside" id="zzx-cJ-gn8"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vsY-y7-vGF">
-                                <rect key="frame" x="145" y="70" width="60" height="30"/>
-                                <state key="normal" title="一時停止"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vsY-y7-vGF">
+                                <rect key="frame" x="180" y="59" width="120" height="48"/>
+                                <state key="normal" title="一時停止" image="ichisto.jpg"/>
                                 <connections>
                                     <action selector="pushpause:" destination="9pv-A4-QxB" eventType="touchUpInside" id="inF-NK-6qE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jAZ-nN-G8R">
-                                <rect key="frame" x="92" y="70" width="30" height="30"/>
-                                <state key="normal" title="再生"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jAZ-nN-G8R">
+                                <rect key="frame" x="86" y="59" width="86" height="50"/>
+                                <state key="normal" image="start.jpg"/>
                                 <connections>
                                     <action selector="pushplay:" destination="9pv-A4-QxB" eventType="touchUpInside" id="clE-Bj-zVT"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="itO-eG-jeE">
-                                <rect key="frame" x="231" y="70" width="60" height="30"/>
-                                <state key="normal" title="停止"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="itO-eG-jeE">
+                                <rect key="frame" x="245" y="59" width="84" height="48"/>
+                                <state key="normal" title="停止" image="stop.jpg"/>
                                 <connections>
                                     <action selector="pushstop:" destination="9pv-A4-QxB" eventType="touchUpInside" id="qsz-TC-gcn"/>
                                 </connections>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="0SM-Zw-ldz">
-                                <rect key="frame" x="60" y="219" width="201" height="31"/>
-                                <connections>
-                                    <action selector="rate:" destination="9pv-A4-QxB" eventType="valueChanged" id="Ac2-mD-ufp"/>
-                                </connections>
-                            </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9hV-4A-UI1">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="no music" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9hV-4A-UI1">
                                 <rect key="frame" x="30" y="146" width="261" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="3pro.png" translatesAutoresizingMaskIntoConstraints="NO" id="7gD-vy-UwB">
-                                <rect key="frame" x="122" y="297" width="70" height="70"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4k-Tu-TfZ">
-                                <rect key="frame" x="30" y="181" width="261" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1000" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="7xf-dn-ayh">
-                                <rect key="frame" x="60" y="257" width="201" height="31"/>
-                                <connections>
-                                    <action selector="pitch:" destination="9pv-A4-QxB" eventType="valueChanged" id="EV4-bu-4YK"/>
-                                </connections>
-                            </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="30W-RK-tFq">
                                 <rect key="frame" x="34" y="117" width="50" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -85,16 +56,25 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t3K-ab-lWm">
+                                <rect key="frame" x="72" y="222" width="177" height="166"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L8x-MI-17R">
+                                <rect key="frame" x="20" y="59" width="84" height="48"/>
+                                <state key="normal" image="choice.jpg"/>
+                                <connections>
+                                    <action selector="pick:" destination="9pv-A4-QxB" eventType="touchDown" id="e6Y-Ls-giw"/>
+                                    <action selector="pick:" destination="9pv-A4-QxB" eventType="touchUpInside" id="zzx-cJ-gn8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="Music" image="s_onpu" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="currentTime" destination="30W-RK-tFq" id="Lwz-0H-aWa"/>
+                        <outlet property="jacket" destination="t3K-ab-lWm" id="Zve-jY-Tc1"/>
                         <outlet property="messageLabel" destination="9hV-4A-UI1" id="7bQ-xv-qpQ"/>
-                        <outlet property="musicbtn" destination="7gD-vy-UwB" id="5m7-JH-7Az"/>
-                        <outlet property="names" destination="j4k-Tu-TfZ" id="3ih-6P-852"/>
-                        <outlet property="rate" destination="0SM-Zw-ldz" id="HLS-wb-A0O"/>
                         <outlet property="totalTime" destination="RCb-3i-mhl" id="Ogv-nR-ao2"/>
                     </connections>
                 </viewController>
@@ -114,29 +94,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="55" y="263" width="210" height="42"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="52" y="313" width="216" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pYl-jW-98W">
+                                <rect key="frame" x="55" y="159" width="45" height="30"/>
+                                <state key="normal" title="record"/>
+                                <connections>
+                                    <action selector="pushplaybtn:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="g68-uP-oBI"/>
+                                    <action selector="pushrecordbtn:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="giv-qa-BXb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDf-wH-CR1">
+                                <rect key="frame" x="205" y="159" width="30" height="30"/>
+                                <state key="normal" title="play"/>
+                                <connections>
+                                    <action selector="pushplaybtn:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="TXW-LS-CbW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iVo-Gn-SOd">
+                                <rect key="frame" x="138" y="159" width="31" height="30"/>
+                                <state key="normal" title="stop"/>
+                                <connections>
+                                    <action selector="pushstopbtn:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="bk4-os-3GD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rzf-Fq-yci">
+                                <rect key="frame" x="39" y="269" width="30" height="30"/>
+                                <state key="normal" title="女"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZq-DH-fyZ">
+                                <rect key="frame" x="145" y="269" width="30" height="30"/>
+                                <state key="normal" title="男"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-4N-Vmt"/>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="JgO-Fn-dHn"/>
-                            <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
-                            <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
-                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="ladybtn" destination="rzf-Fq-yci" id="gzM-tY-dxs"/>
+                        <outlet property="manbtn" destination="LZq-DH-fyZ" id="rGx-WK-OCv"/>
+                        <outlet property="playbtn" destination="yDf-wH-CR1" id="ekQ-24-jDJ"/>
+                        <outlet property="recordbtn" destination="pYl-jW-98W" id="Koh-YF-7TP"/>
+                        <outlet property="stopbtn" destination="iVo-Gn-SOd" id="NAA-Yk-anE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -164,8 +162,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="3pro.png" width="559" height="438"/>
-        <image name="first" width="30" height="30"/>
+        <image name="choice.jpg" width="48" height="48"/>
+        <image name="ichisto.jpg" width="48" height="48"/>
+        <image name="s_onpu" width="35" height="35"/>
         <image name="second" width="30" height="30"/>
+        <image name="start.jpg" width="48" height="48"/>
+        <image name="stop.jpg" width="48" height="48"/>
     </resources>
 </document>

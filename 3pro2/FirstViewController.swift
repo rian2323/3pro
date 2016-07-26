@@ -18,6 +18,7 @@ class FirstViewController: UIViewController, MPMediaPickerControllerDelegate {
     
     @IBOutlet weak var musicbtn: UIImageView!
     
+    @IBOutlet weak var jacket: UIImageView!
     @IBOutlet weak var names: UILabel!
     
     @IBOutlet weak var messageLabel: UILabel!
@@ -47,9 +48,13 @@ class FirstViewController: UIViewController, MPMediaPickerControllerDelegate {
     
     
     override func viewDidLoad() {
-        print("a");
+        //print("a");
         super.viewDidLoad()
-        manager.accelerometerUpdateInterval = 0.1
+        
+        
+       
+        
+        manager.accelerometerUpdateInterval = 0.8
         let handler:CMAccelerometerHandler = {(data:CMAccelerometerData?, error:NSError?) -> Void in
             self.xValue = data!.acceleration.x
             self.yValue = data!.acceleration.y
@@ -57,6 +62,15 @@ class FirstViewController: UIViewController, MPMediaPickerControllerDelegate {
             
             self.rate(self.xValue)
             self.pitch(self.yValue)
+            
+            /*player = MPMusicPlayerController.applicationMusicPlayer()
+            //player = MPMusicPlayerController.systemMusicPlayer()
+            
+            // 再生中のItemが変わった時に通知を受け取る
+            let notificationCenter = NSNotificationCenter.defaultCenter()
+            notificationCenter.addObserver(self, selector: #selector(ViewController.nowPlayingItemChanged(_:)), name: MPMusicPlayerControllerNowPlayingItemDidChangeNotification, object: player)
+            // 通知の有効化
+            player.beginGeneratingPlaybackNotifications()*/
         }
         manager.startAccelerometerUpdatesToQueue(NSOperationQueue.currentQueue()!,withHandler:handler)
         /*self.rate(self.xValue)
@@ -66,21 +80,21 @@ class FirstViewController: UIViewController, MPMediaPickerControllerDelegate {
         // Do any additil setup after loading the view, typically from a nib.
         
         messageLabel!.text! = ""
-        vx = 0.0
+       /* vx = 0.0
         vy = 0.0
-        startmove()
+        startmove()*/
     }
     
     
     
-    func startmove() {
+    /*func startmove() {
         manager.deviceMotionUpdateInterval = 0.1
         let handler: CMDeviceMotionHandler = {
             (motionData: CMDeviceMotion?, error: NSError?) -> Void in
             self.stopmove(motionData, error: error)
         }
         manager.startDeviceMotionUpdatesToQueue(NSOperationQueue.mainQueue(), withHandler: handler)
-    }
+    }*/
     
     
     func rate(xjiku: Double){
@@ -89,7 +103,7 @@ class FirstViewController: UIViewController, MPMediaPickerControllerDelegate {
         let sNum3:String = String(num3)
         var finalx: Float  = NSString(string: sNum3).floatValue
         
-        timePitch.rate = finalx * -5
+        timePitch.rate = finalx * 3 + 0.8
         print(finalx)
     }
     
@@ -101,14 +115,14 @@ class FirstViewController: UIViewController, MPMediaPickerControllerDelegate {
         let sNum4:String = String(num4)
         var finaly: Float  = NSString(string: sNum4).floatValue
         
-        timePitch.pitch =  finaly * 10000
+        timePitch.pitch =  finaly * 1000
 
         print(finaly)
         
     }
     
     
-    func stopmove(motionData: CMDeviceMotion?, error: NSError?) {
+   /* func stopmove(motionData: CMDeviceMotion?, error: NSError?) {
         var xMin, xMax, yMin, yMax: Int
         var separate: Int
         xMin = Int(musicbtn.frame.width / 2)
@@ -151,7 +165,7 @@ class FirstViewController: UIViewController, MPMediaPickerControllerDelegate {
             musicbtn.center = CGPoint(x: x,y: y)
         }
     }
-    
+    */
 
 
 
@@ -167,11 +181,19 @@ class FirstViewController: UIViewController, MPMediaPickerControllerDelegate {
         presentViewController(picker, animated: true, completion: nil)
     }
     
+    
     func mediaPicker(mediaPicker: MPMediaPickerController, didPickMediaItems mediaItemCollection: MPMediaItemCollection) {
+        
+        if let mediaItem = mediaItemCollection.items.first {
+            updateSongInformationUI(mediaItem)
+        }
+        
         
         defer {
             dismissViewControllerAnimated(true, completion: nil)
         }
+        
+        
         /*
         let items = mediaItemCollection.items
         if items.isEmpty {
@@ -277,6 +299,21 @@ class FirstViewController: UIViewController, MPMediaPickerControllerDelegate {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    
+    func updateSongInformationUI(mediaItem: MPMediaItem) {
+        
+        // アートワーク表示
+        if let artwork = mediaItem.artwork {
+            let image = artwork.imageWithSize(artwork.bounds.size)
+            jacket.image = image
+        } else {
+            // アートワークがないとき
+            // (今回は灰色表示としました)
+            jacket.image = nil
+            jacket.backgroundColor = UIColor.grayColor()
+        }
+        
+    }
     
     func formatTimeString(d: Double) -> String {
         let s: Int = Int(d % 60)
